@@ -1,0 +1,58 @@
+.card-main-news {
+    height: 330px;
+    width: 550px !important;
+    /* margin-left: 90px; */
+    position: relative;
+}
+
+.main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+    clip-path: inset(0 0 0 0);
+}
+
+.card-main-news img {
+    border-radius: 0px;
+}
+
+.judul-detail {
+    margin-left: -35px;
+}
+
+.kategori-detail {
+    margin-bottom: 0px;
+    font-size: 18px;
+}
+
+.isi-artikel {
+    max-width: 800px;
+    line-height: 28px;
+}
+
+/* styling mobile */
+@media (max-width: 575.98px) {
+    .card-main-news {
+        height: 215px;
+        width: 370px !important;
+        margin: 10px auto;
+    }
+
+    .main-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center bottom;
+        clip-path: inset(0 0 0 0);
+    }
+
+    .judul-detail {
+        margin-left: 0px;
+    }
+
+    .isi-artikel {
+        max-width: 800px;
+        line-height: auto;
+    }
+}

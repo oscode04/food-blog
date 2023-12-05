@@ -1,0 +1,132 @@
+body {
+    background-color: #f5f5f5;
+}
+
+.title {
+    font-family: "Inter", sans-serif;
+    color: #141418;
+}
+
+.title h2 {
+    font-weight: 600;
+}
+
+.video-wt {
+    max-width: 380px;
+    /* margin-left: 10px; */
+    /* margin-right: 10px; */
+    cursor: pointer;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.video-wt > a > img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.material-symbols-rounded {
+    font-size: 50px !important;
+    z-index: 100;
+    color: rgba(255, 255, 255, 0.8);
+    font-variation-settings: "FILL" 1;
+    position: absolute;
+    margin-top: 90px;
+}
+
+.video-wt > .icon > span {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 50%;
+}
+
+.card-title {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.card-text,
+.long-text {
+    font-family: "Inter", sans-serif;
+    color: #141418;
+    font-size: 14px;
+}
+
+@media (max-width: 767.98px) {
+    .card-body {
+        margin-top: 10px;
+        margin-left: 5px;
+    }
+}
+
+.artikel {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.artikel-container {
+    max-width: 210px;
+    max-height: 140px;
+    margin-right: 10px;
+}
+
+.img-artikel-size {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.artikel-tittle {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.text-artikel-container {
+    margin-top: -7px;
+}
+
+@media (max-width: 767.98px) {
+    .long-text {
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* Atur ketinggian maksimal menjadi 2 baris */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+/* tambahan */
+
+@media (max-width: 767.98px) {
+    .artikel-container {
+        width: 150px;
+        height: 100px;
+    }
+
+    .artikel-container > img {
+        width: 100%;
+        /* height: 100%; */
+        border-radius: 10px;
+    }
+    .artikel-tittle {
+        font-size: 16px;
+        font-weight: 600;
+        font-family: "Montserrat", sans-serif;
+    }
+    .text-container {
+        /* width: 500px; */
+        overflow: hidden;
+    }
+    .long-text {
+        /* white-space: nowrap; Mencegah teks pindah baris */
+        overflow: hidden; /* Menyembunyikan teks yang melebihi lebar */
+        text-overflow: ellipsis; /* Menambahkan titik-titik (...) jika teks terpotong */
+    }
+}
