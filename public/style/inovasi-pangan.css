@@ -18,7 +18,6 @@ body {
     cursor: pointer;
     overflow: hidden;
     margin-bottom: 25px;
-    cursor: default;
 }
 
 .video-wt > a > img {
