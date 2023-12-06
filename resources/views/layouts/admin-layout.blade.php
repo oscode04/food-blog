@@ -10,6 +10,7 @@
     <meta name="author" content="" />
 
     <title>@yield('title')</title>
+    <link rel="icon" href="../../aset/icon/logo-crop.jpg" />
 
     @stack('prepend-style')
     {{-- @include('includes.style-2') --}}
@@ -18,7 +19,7 @@
     {{-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" /> --}}
     <link href="/../style/dashboard.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
-    <link rel="icon" href="../../aset/icon/logo-crop.jpg" />
+   
     {{-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.21/datatables.min.css"/> --}}
     {{-- @include('includes.style') --}}
     <style>
