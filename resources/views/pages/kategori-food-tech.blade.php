@@ -17,7 +17,7 @@ $videosWithSubCategoryThree = $videos->where('id_sub_categories', 3);
 
     <div class="row d-flex justify-content-center">
       <!-- video container -->
-      @if ($articlesWithSubCategoryThree->isNotEmpty())
+      @if ($videosWithSubCategoryThree->isNotEmpty())
             @foreach ($videosWithSubCategoryThree as $video)
             <div class="col-lg-4 video-wt">
               <div class="icon d-flex justify-content-center">

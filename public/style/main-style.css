@@ -197,7 +197,7 @@ max-width: 1196px;
         background-color: #f05c36;
         color: #ffff;
         z-index: 100;
-        padding: 10px 5px 10px 10px;
+        /* padding: 10px 5px 0px 10px; */
     }
 
     .card-body p:nth-child(1) {
@@ -222,7 +222,7 @@ max-width: 1196px;
         font-family: "Inter", sans-serif;
         font-size: 10px;
         font-weight: 400;
-        margin-bottom: 7px;
+        margin-bottom: 1px;
     }
     /* style hot artikel */
     .hot-artikel h1 {

@@ -50,7 +50,6 @@
           <div class="frame">
             <h3>Artikel Populer</h3>
             @forelse ($hot_articles as $hot_article)
-              @if ($hot_article->id_categories === 5)
                 <a href="{{route('artikel-details',$hot_article->slug)}}">
                   <div class="row">
                     <div class="col-lg-4">
@@ -68,7 +67,6 @@
                     </div>
                   </div>
                 </a>
-              @endif
             @empty
             <div class="row">
               <div class="col-lg-4 col-6 ">
@@ -121,9 +119,15 @@
       @forelse ($main_articles as $main_article)
         <a href="{{route('artikel-details',$article->slug)}}">
           <div class="card card-main-news">
-            <img src="aset/img/main-img-test.jpg" class="main-img" />
+            <img src="{{Storage::url($main_article->main_img)}}" class="main-img" />
             <div class="card-body">
-              <p>{{ $main_article->article_sub_category }}</p>
+              @forelse ($sub_categories as $sub_category)
+                @if ($sub_category->id === $main_article->id_sub_categories)
+                  <p>{{$sub_category->name_sub_categories  }}</p>  
+                @endif
+              @empty
+                  
+              @endforelse
               <h5 class="card-title">
                {{ $main_article->article_title }}
               </h5>

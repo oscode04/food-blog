@@ -13,7 +13,7 @@ class LandingPageController extends Controller
 
         $main_articles = Article::whereNull('deleted_at')->take(1)->latest()->get();
 
-        $hot_articles = Article::whereNull('deleted_at')->take(3)->latest()->get();
+        $hot_articles = Article::where('id_categories', 5)->whereNull('deleted_at')->take(3)->latest()->get();
 
         $articles = Article::whereNull('deleted_at')->take(5)->latest()->get();
 
