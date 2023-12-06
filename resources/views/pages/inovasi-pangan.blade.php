@@ -5,6 +5,10 @@
 @endsection
 
 @section('content')
+@php
+$articlesWithSubCategoryThree = $articles->where('id_sub_categories', 1);
+$videosWithSubCategoryThree = $videos->where('id_sub_categories', 1);
+@endphp
 <div class="container">
     <div class="mt-lg-3 mb-lg-3 mt-3 mb-3 title">
       <h2 class="text-lg-start text-center">Inovasi Pangan</h2>
@@ -13,66 +17,64 @@
 
     <div class="row d-flex justify-content-center">
       <!-- video container -->
-      @forelse ($videos as $video)
-        @if ($video->id_sub_categories === 1)
-        <div class="col-lg-4 video-wt">
-          <div class="icon d-flex justify-content-center">
-            <span class="material-symbols-rounded"> play_arrow </span>
+      @if ($videosWithSubCategoryThree->isNotEmpty())
+          @foreach ($videosWithSubCategoryThree as $video)
+          <div class="col-lg-4 video-wt">
+            <div class="icon d-flex justify-content-center">
+              <span class="material-symbols-rounded"> play_arrow </span>
+            </div>
+            <a href="{{ $video->link }}">
+              <img src="{{ $video->link_thumbnail }}" alt="" />
+            </a>
+            <div class="card-body mt-lg-2">
+              <h5 class="card-title"> {{ $video->article_title }}</h5>
+              <p class="card-text">
+                {{ Str::limit(strip_tags($video->article_contens), 100) }}
+              </p>
+            </div>
+          </div> 
+          @endforeach
+      @else
+          <div style="cursor: default" class="col-lg-4 video-wt">
+              <h5 class="text-center" style="margin-bottom: 118px">Belum Ada Video di Publish</h5>
           </div>
-          <a href="{{ $video->link }}">
-            <img src="{{ $video->link_thumbnail }}" alt="" />
-          </a>
-          <div class="card-body mt-lg-2">
-            <h5 class="card-title"> {{ $video->article_title }}</h5>
-            <p class="card-text">
-              {{ Str::limit(strip_tags($video->article_contens), 100) }}
-            </p>
-          </div>
-        </div>
-        @endif
-      @empty
-      <div class="col-lg-4 video-wt">
-        <h3 class="text-center">Belum Ada Video di Publish</h3>
-      </div>
-      @endforelse
+      @endif
       <!-- end video container -->
     </div>
     <!-- artikel -->
     <div>
       <h5 class="mt-lg-4 mb-lg-3 artikel">Artikel Inovasi Pangan</h5>
       <div style="margin-bottom: 95px">
-        @forelse ($articles as $article)
-          @if ($article->id_sub_categories === 1)
-          <a href="{{route('artikel-details',$article->slug)}}">
-            <div class="row mb-3 g-0">
-              <div class="col-lg-2 col-6 pe-0 artikel-container">
-                <img
-                  class="img-artikel-size"
-                  src="{{Storage::url($article->main_img)}}"
-                  alt=""
-                />
-              </div>
+        @if ($articlesWithSubCategoryThree->isNotEmpty())
+            @foreach ($articlesWithSubCategoryThree as $article)
+              <a href="{{route('artikel-details',$article->slug)}}">
+                <div class="row mb-3 g-0">
+                  <div class="col-lg-2 col-6 pe-0 artikel-container">
+                    <img
+                      class="img-artikel-size"
+                      src="{{Storage::url($article->main_img)}}"
+                      alt=""
+                    />
+                  </div>
 
-              <div class="col-lg-4 col-6">
-                <h4 class="artikel-tittle ms-1 ms-lg-0">
-                  {{ $article->article_title }}
-                </h4>
-                <div class="text-artikel-container">
-                  <p class="long-text ms-1 ms-lg-0">
-                    {{ Str::limit(strip_tags($article->article_contens), 100) }}
-                  </p>
+                  <div class="col-lg-4 col-6">
+                    <h4 class="artikel-tittle ms-1 ms-lg-0">
+                      {{ $article->article_title }}
+                    </h4>
+                    <div class="text-artikel-container">
+                      <p class="long-text ms-1 ms-lg-0">
+                        {{ Str::limit(strip_tags($article->article_contens), 100) }}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </a>  
+            @endforeach
+        @else
+            <div class="col-lg-4 video-wt" style="cursor: default">
+                <h5 style="margin-bottom: 118px">Belum Ada Artikel di Publish</h5>
             </div>
-          </a>
-          @else
-          <div class="col-lg-4 video-wt">
-            <h5 style="margin-bottom: 118px">Belum Ada Artikel di Publish</h5>
-          </div>
-          @endif
-        @empty
-            
-        @endforelse
+        @endif
       </div>
     </div>
 </div>

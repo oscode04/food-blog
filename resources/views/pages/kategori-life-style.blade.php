@@ -35,7 +35,7 @@ $videosWithSubCategoryThree = $videos->where('id_sub_categories', 4);
         </div> 
         @endforeach
     @else
-        <div class="col-lg-4 video-wt">
+        <div class="col-lg-4 video-wt" style="cursor: default">
             <h5 class="text-center" style="margin-bottom: 118px">Belum Ada Video di Publish</h5>
         </div>
     @endif
@@ -71,7 +71,7 @@ $videosWithSubCategoryThree = $videos->where('id_sub_categories', 4);
             </a>  
           @endforeach
       @else
-          <div class="col-lg-4 video-wt">
+          <div class="col-lg-4 video-wt" style="cursor: default">
               <h5 style="margin-bottom: 118px">Belum Ada Artikel di Publish</h5>
           </div>
       @endif
