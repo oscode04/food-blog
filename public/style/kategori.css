@@ -63,6 +63,7 @@ a {
         padding-left: 0px !important;
         padding-bottom: 15px !important;
     }
+
     h1 {
         font-size: 20px;
         margin-top: 15px;
@@ -71,5 +72,21 @@ a {
 
     .container .row {
         margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .c-1 {
+        padding-right: 20px !important;
+        padding-bottom: 40px !important;
+    }
+
+    .c-2 {
+        padding-left: 20px !important;
+        padding-bottom: 40px !important;
+    }
+
+    .container-category {
+        margin-bottom: 340px;
     }
 }
