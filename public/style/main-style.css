@@ -38,7 +38,7 @@ a {
     padding: 10px 15px 20px 20px;
 }
 
-.frame > h3 {
+.frame>h3 {
     font-family: "Inter", sans-serif;
     font-size: 24px;
     font-weight: 500;
@@ -224,6 +224,7 @@ max-width: 1196px;
         font-weight: 400;
         margin-bottom: 1px;
     }
+
     /* style hot artikel */
     .hot-artikel h1 {
         font-family: "Inter", sans-serif;
@@ -278,5 +279,16 @@ max-width: 1196px;
         color: #ffff;
         margin-top: -10px;
         margin-bottom: 25px;
+    }
+}
+
+/* tab view */
+@media (max-width: 991.98px) {
+    .card-main-news {
+        margin: 0px;
+    }
+
+    .frame {
+        display: none;
     }
 }

@@ -10,7 +10,7 @@
     <section class="section1 d-none d-sm-block">
       <div class="row g-0">
         <!-- Berita Utama -->
-        <div class="col-lg-6 d-flex justify-content-lg-start">
+        <div class="col-lg-6 d-flex justify-content-md-center justify-content-lg-start">
           <div class="img-news">
             @forelse ($main_articles as $main_article)
               <a href="{{route('artikel-details',$main_article->slug)}}">
@@ -46,7 +46,7 @@
         </div>
         <!-- end Berita Utama -->
         <!-- Artikel Populer -->
-        <div class="col-lg-6 d-flex justify-content-end">
+        <div class="col-lg-6  d-flex justify-content-end">
           <div class="frame">
             <h3>Artikel Populer</h3>
             @forelse ($hot_articles as $hot_article)
@@ -79,18 +79,20 @@
         <!-- end Artikel Populer -->
       </div>
     </section>
+    
+    <!-- Artikel terbaru -->
     <section class="section2 container mb-5 d-none d-sm-block">
       <h1>Artikel Terbaru</h1>
       <div class="line-artikel"></div>
       @forelse ($articles as $article)
           <a href="{{route('artikel-details',$article->slug)}}">
-            <div class="row mb-lg-4">
-              <div class="col-lg-2">
+            <div class="row mb-lg-4 mb-md-3">
+              <div class="col-lg-2 col-md-3">
                 <div class="frame-artikel">
                   <img src="{{Storage::url($article->main_img)}}" alt="" />
                 </div>
               </div>
-              <div class="isi-artikel col-lg-6">
+              <div class="isi-artikel col-lg-6 col-md-5 ms-md-3">
                 <h3>{{ $article->article_title }}</h3>
                 <p>
                   {{ Str::limit(strip_tags($article->article_contens), 100) }}
