@@ -41,7 +41,7 @@
       </button>
     </form>
   </section>
-  <section class="container mb-lg-5 mb-2">
+  <section class="container mb-lg-5 mb-2 contact-container">
     <h1 class="kontak-lain">Atau kontak medsos kami</h1>
     <div class="instagram d-flex mt-1">
       <img src="../aset/icon/Instagram-dark.png" alt="" />

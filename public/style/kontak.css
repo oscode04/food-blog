@@ -56,5 +56,11 @@ a {
 }
 
 /* styling mobile */
-@media (max-width: 575.98px) {
+@media (max-width: 575.98px) {}
+
+/* styling tab */
+@media (max-width: 991.98px) {
+    .contact-container {
+        margin-bottom: 350px !important;
+    }
 }
